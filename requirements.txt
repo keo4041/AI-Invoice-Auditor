@@ -1,0 +1,8 @@
+streamlit
+pandas
+pdfplumber
+pydantic
+openai
+google-generativeai
+anthropic
+groq
