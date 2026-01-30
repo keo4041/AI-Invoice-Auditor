@@ -102,7 +102,7 @@ def analyze_invoice(provider, api_key, text_content):
         if provider == "Google Gemini":
             if not genai: st.error("Library `google-generativeai` not installed."); return None
             genai.configure(api_key=api_key)
-            model = genai.GenerativeModel('gemini-1.5-flash', generation_config={"response_mime_type": "application/json"})
+            model = genai.GenerativeModel('gemini-2.5-flash', generation_config={"response_mime_type": "application/json"})
             response = model.generate_content(f"{system_instruction}\n\nINVOICE TEXT:\n{text_content}")
             return InvoiceExtraction(**json.loads(response.text))
 
